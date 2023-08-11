@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #search {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #clear {
+            display: none;
+        }
+
+        #results {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="search" placeholder="Search...">
+        <button id="clear" title="Clear Query">X</button>
+    </div>
+    <ul id="results"></ul>
+
+    <script>
+// common stop words to be ignored in the search query
+const stopWords = ['of', 'the', 'download', 'in', 'a', 'an', 'if', 'for', 'how','to'];
+
+// fetch posts from JSON file
+fetch('data2.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var posts = data.posts;
+
+        // get references to the search box, clear button, and results list
+        var searchBox = document.getElementById('search');
+        var clearButton = document.getElementById('clear');
+        var resultsList = document.getElementById('results');
+        var numResults = 10; // maximum number of results to show at a time
+
+        // listen for keyup events on the search box
+        searchBox.addEventListener('keyup', function (event) {
+            // clear the results list
+            resultsList.innerHTML = '';
+
+            // get the query the user typed
+            var query = searchBox.value.trim().toLowerCase();
+
+            // clear the clear button if there is no query
+            if (query.length === 0) {
+                clearButton.style.display = 'none';
+                return;
+            }
+
+            // show the clear button
+            clearButton.style.display = 'inline-block';
+
+            // split the query into individual words
+            var words = query.split(' ');
+
+            // filter the words to remove stop words
+            var filteredWords = words.filter(function (word) {
+                return !stopWords.includes(word);
+            });
+
+            // filter the posts by the filtered query
+            var filteredPosts = posts.filter(function (post) {
+                var priority = 0;
+                for (var i = 0; i < filteredWords.length; i++) {
+                    var word = filteredWords[i];
+                    if (post.title.toLowerCase().includes(word)) {
+                        priority += 2; // 3 priority points for the post with keyword in the title
+                    }
+                    if (post.description.toLowerCase().includes(word)) {
+                        priority += 1; // 2 priority points for the post with keyword in the description
+                    }
+                    if (post.keywords.join().toLowerCase().includes(word)) {
+                        priority += 3; // 1 priority point for the post with keyword in the keywords
+                    }
+                }
+                if (priority > 0) {
+                    post.priority = priority; // assign priority to the post
+                    return true;
+                }
+                return false; // exclude the post with no priority
+            });
+
+            // sort the filtered posts by priority in descending order
+            filteredPosts.sort(function (a, b) {
+                if (a.priority < b.priority) return 1;
+                if (a.priority > b.priority) return -1;
+                return 0;
+            });
+
+            // add the filtered posts to the results list
+            var numMatches = Math.min(filteredPosts.length, numResults); // number of matches to show
+            for (var i = 0; i < numMatches; i++) {
+                var postItem = document.createElement('li');
+                var postLink = document.createElement('a');
+                postLink.textContent = filteredPosts[i].title;
+                postLink.href = filteredPosts[i].url;
+                postItem.appendChild(postLink);
+
+                var postDescription = document.createElement('p');
+                postDescription.textContent = filteredPosts[i].description;
+                postItem.appendChild(postDescription);
+
+                resultsList.appendChild(postItem);
+            }
+        });
+
+        // listen for click events on the clear button
+        clearButton.addEventListener('click', function () {
+            // clear the search box and results list, hide the clear button
+            searchBox.value = '';
+            resultsList.innerHTML = '';
+            clearButton.style.display = 'none';
+        });
+    });
+    </script>
+</body>
+</html>

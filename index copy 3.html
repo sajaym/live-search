@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #search {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      #clear {
+        display: none;
+      }
+
+      #results {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      #show-more {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 8px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="search" placeholder="Search...">
+      <button id="clear" title="Clear Query">X</button>
+    </div>
+    <ul id="results"></ul>
+    <button id="show-more" style="display: none;">Show More</button>
+
+    <script>
+      // fetch data from the JSON file
+      fetch('data.json')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          var posts = data.posts;
+
+          // get references to the search box, clear button, results list, and pager
+          var searchBox = document.getElementById('search');
+          var clearButton = document.getElementById('clear');
+          var resultsList = document.getElementById('results');
+          var showMoreButton = document.getElementById('show-more');
+          var totalResultsDisplayed = 0;
+
+          // listen for keyup events on the search box
+          searchBox.addEventListener('keyup', function(event) {
+            // get the query the user typed
+            var query = searchBox.value.trim().toLowerCase();
+
+            // clear the results list
+            resultsList.innerHTML = '';
+            showMoreButton.style.display = 'none';
+
+            // clear the query button
+            if (query.length > 0) {
+              // show the clear button when there is text in the search box
+              clearButton.style.display = 'inline-block';
+
+              // filter the posts by the query
+              var filteredPosts;
+              try {
+                filteredPosts = posts.filter(function(post) {
+                  return post.title.toLowerCase().includes(query) || 
+                    post.description.toLowerCase().includes(query) ||
+                    post.keywords.includes(query);
+                });
+              } catch (e) {
+                filteredPosts = posts.filter(function(post) {
+                  return post.title.toLowerCase().includes(query) || 
+                    post.description.toLowerCase().includes(query);
+                });
+              }
+
+              // display the filtered posts in the results list
+              var numResults = filteredPosts.length;
+              totalResultsDisplayed = 0;
+              if (numResults > 0) {
+                showMoreButton.style.display = 'block';
+              }
+              displayResults(filteredPosts.slice(0, 10));
+              totalResultsDisplayed += 10;
+            } else {
+              // hide the clear button and don't show any search results
+              clearButton.style.display = 'none';
+            }
+          });
+
+          // listen for click events on the clear button
+          clearButton.addEventListener('click', function() {
+            // clear the search box and hide the results
+            searchBox.value = '';
+            resultsList.innerHTML = '';
+            showMoreButton.style.display = 'none';
+            clearButton.style.display = 'none';
+            totalResultsDisplayed = 0;
+          });
+
+          // listen for click events on the show more button
+          showMoreButton.addEventListener('click', function() {
+            // display the next 10 search results
+            var filteredPosts;
+            try {
+              filteredPosts = posts.filter(function(post) {
+                return post.title.toLowerCase().includes(searchBox.value) || 
+                  post.description.toLowerCase().includes(searchBox.value) ||
+                  post.keywords.includes(searchBox.value);
+              });
+            } catch (e) {
+              filteredPosts = posts.filter(function(post) {
+                return post.title.toLowerCase().includes(searchBox.value) || 
+                  post.description.toLowerCase().includes(searchBox.value);
+              });
+            }
+            displayResults(filteredPosts.slice(totalResultsDisplayed, totalResultsDisplayed + 10));
+            totalResultsDisplayed += 10;
+            if (totalResultsDisplayed >= filteredPosts.length) {
+              showMoreButton.style.display = 'none';
+            }
+          });
+
+          // listen for keydown events on the search box to detect backspace
+          searchBox.addEventListener('keydown', function(event) {
+            if (event.key == 'Backspace' && searchBox.value.length == 1) {
+              // hide the results when the user clears the search box using backspace
+              resultsList.innerHTML = '';
+              showMoreButton.style.display = 'none';
+              clearButton.style.display = 'none';
+              totalResultsDisplayed = 0;
+            }
+            // redirect to search results if enter key was pressed
+            if (event.key === 'Enter') {
+              searchBox.blur(); // unfocus the search box
+              var query = encodeURIComponent(searchBox.value.trim().toLowerCase());
+              window.location.href = 'search.html?q=' + query;
+            }
+          });
+
+          function displayResults(results) {
+            results.forEach(function(post) {
+              var postItem = document.createElement('li');
+              var postLink = document.createElement('a');
+              postLink.textContent = post.title;
+              postLink.href = post.url;
+              postItem.appendChild(postLink);
+
+              // show post description below post title
+              var postDescription = document.createElement('p');
+              postDescription.textContent = post.description;
+              postItem.appendChild(postDescription);
+
+              resultsList.appendChild(postItem);
+            });
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/icomoon/style.css">
+
+    <style>
+        #search {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #clear {
+            display: none;
+        }
+
+        #results {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="search-container">
+        <div class="search-box-div">
+            <button id="search-ico" title="Search logo"><span class="icon-search"></span></span></button>
+            <input type="text" id="search" placeholder="Search...">
+            <button id="clear" title="Clear Query"><span class="icon-x-circle"></span></button>
+        </div>
+        <ul id="results" class="search-result-ui">
+        </ul>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>

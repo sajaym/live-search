@@ -1,0 +1,131 @@
+html{
+    font-family: 'Work Sans';
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+}
+
+.search-container{
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    
+}
+
+.search-box-div{
+    position: absolute;
+    z-index: 200;
+}
+
+#search{
+    padding-left: 35px;
+    margin: 0px;
+}
+
+#search::placeholder {
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+}
+
+#search[type="text"] {
+    font-family: "Work Sans", sans-serif;
+    border-radius: 0px;
+    border: 1px solid gray;
+    background-color: #eee;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+#search[type="text"]:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 0px #33333346;
+    border: 1px solid gray;
+}
+
+.search-box-div{
+    position: relative;
+}
+#clear{
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    border: none;
+    background-color: rgba(0, 255, 255, 0);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#search-ico{
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        border: none;
+        background-color: rgba(0, 255, 255, 0);
+        font-size: 20px;
+        cursor: pointer;
+}
+
+#results{
+    background-color: white;
+    position: relative;
+    z-index: 100;
+    top: -10px;
+    border: 1px solid gray;
+
+}
+
+#results li{
+    padding: 10px 10px;
+}
+
+#results li:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+#results li a{
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+}
+
+
+.sr-logo{
+    margin-top: 4px;
+}
+
+.sr-logo span{
+    color: red;
+    font-size: 18px;
+}
+
+.sr-detail{
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sr-detail p{
+    color: rgb(190, 7, 7);
+    line-height: 1.4em;
+}
+
+.sr-detail span{
+    flex-grow: 1;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+
+    color: rgb(51, 51, 51);
+    font-size: 15px;
+    line-height: 1.5em;
+}

@@ -1,0 +1,184 @@
+{
+    "posts": [
+      {
+        "url": "post1.html",
+        "title": "Introduction to HTML",
+        "description": "This post introduces you to HTML.",
+        "keywords": ["HTML", "web development"]
+      },
+      {
+        "url": "post2.html",
+        "title": "CSS Basics",
+        "description": "This post covers CSS basics.",
+        "keywords": ["CSS", "web development"]
+      },
+      {
+        "url": "post3.html",
+        "title": "JavaScript Fundamentals",
+        "description": "This post covers JavaScript fundamentals.",
+        "keywords": ["JavaScript", "web development"]
+      },
+      {
+        "url": "post4.html",
+        "title": "Responsive Web Design",
+        "description": "This post covers responsive web design.",
+        "keywords": ["CSS", "web development"]
+      },
+      {
+        "url": "post5.html",
+        "title": "Web Accessibility",
+        "description": "This post covers web accessibility.",
+        "keywords": ["HTML", "web development", "accessibility", "ajay", "केंद्र"]
+      },
+      {
+        "url": "post6.html",
+        "title": "Debugging Tips",
+        "description": "This post covers debugging tips.",
+        "keywords": ["JavaScript", "web development", "debugging"]
+      },
+      {
+        "url": "post7.html",
+        "title": "Using Git for Version Control",
+        "description": "This post covers using Git for version control.",
+        "keywords": ["Git", "web development", "version control"]
+      },
+      {
+        "url": "post8.html",
+        "title": "Web Performance Optimization",
+        "description": "This post covers web performance optimization.",
+        "keywords": ["web development", "optimization"]
+      },
+      {
+        "url": "post9.html",
+        "title": "Introduction to React",
+        "description": "This post introduces you to React.",
+        "keywords": ["React", "web development"]
+      },
+      {
+        "url": "post10.html",
+        "title": "Working with APIs",
+        "description": "This post covers working with APIs.",
+        "keywords": ["JavaScript", "API", "भारत", "राजस्थान"]
+      },
+      {
+        "url": "post11.html",
+        "title": "Node.js Essentials",
+        "description": "This post covers Node.js essentials.",
+        "keywords": ["Node.js", "web development", "JavaScript"]
+      },
+      {
+        "url": "post12.html",
+        "title": "React Native Fundamentals",
+        "description": "This post covers React Native fundamentals.",
+        "keywords": ["React Native", "mobile development"]
+      },
+      {
+        "url": "post13.html",
+        "title": "GraphQL Basics",
+        "description": "This post covers GraphQL basics.",
+        "keywords": ["GraphQL", "API"]
+      },
+      {
+        "url": "post14.html",
+        "title": "Advanced CSS Techniques",
+        "description": "This post covers advanced CSS techniques.",
+        "keywords": ["CSS", "web development"]
+      },
+      {
+        "url": "post15.html",
+        "title": "Best Practices for JavaScript Testing",
+        "description": "This post covers best practices for JavaScript testing.",
+        "keywords": ["JavaScript", "testing"]
+      },
+      {
+        "url": "post16.html",
+        "title": "Building Apps with Angular",
+        "description": "This post covers building apps with Angular.",
+        "keywords": ["Angular", "web development", "JavaScript"]
+      },
+      {
+        "url": "post17.html",
+        "title": "Python Basics",
+        "description": "This post covers Python basics.",
+        "keywords": ["Python", "programming", "beginners"]
+      },
+      {
+        "url": "post18.html",
+        "title": "Building RESTful APIs with Node.js and Express",
+        "description": "This post covers building RESTful APIs with Node.js and Express.",
+        "keywords": ["Node.js", "Express", "API"]
+      },
+      {
+        "url": "post19.html",
+        "title": "Bootstrap for Responsive Web Design",
+        "description": "This post covers using Bootstrap for responsive web design.",
+        "keywords": ["Bootstrap", "CSS", "web development"]
+      },
+      {
+        "url": "post20.html",
+        "title": "JavaScript Design Patterns",
+        "description": "This post covers common JavaScript design patterns.",
+        "keywords": ["JavaScript", "design patterns"]
+      },
+      {
+        "url": "post21.html",
+        "title": "Building Real-Time Web Apps with Socket.io",
+        "description": "This post covers building real-time web apps with Socket.io.",
+        "keywords": ["Socket.io", "web development", "JavaScript"]
+      },
+      {
+        "url": "post22.html",
+        "title": "Using Gatsby for Static Site Generation",
+        "description": "This post covers using Gatsby for static site generation.",
+        "keywords": ["Gatsby", "web development", "React"]
+      },
+      {
+        "url": "post23.html",
+        "title": "Python Libraries for Data Analysis",
+        "description": "This post covers Python libraries for data analysis.",
+        "keywords": ["Python", "data analysis"]
+      },
+      {
+        "url": "post24.html",
+        "title": "Building Progressive Web Apps",
+        "description": "This post covers building progressive web apps.",
+        "keywords": ["web development", "progressive web apps"]
+      },
+      {
+        "url": "post25.html",
+        "title": "Using D3 for Data Visualization",
+        "description": "This post covers using D3 for data visualization.",
+        "keywords": ["D3.js", "data visualization", "web development"]
+      },
+      {
+        "url": "post26.html",
+        "title": "JavaScript Frameworks Comparison",
+        "description": "This post compares popular JavaScript frameworks.",
+        "keywords": ["JavaScript", "frameworks", "web development"]
+      },
+      {
+        "url": "post27.html",
+        "title": "Browser Rendering Optimization",
+        "description": "This post covers browser rendering optimization.",
+        "keywords": ["web development", "optimization"]
+      },
+      {
+        "url": "post28.html",
+        "title": "Building Custom WordPress Themes",
+        "description": "This post covers building custom WordPress themes.",
+        "keywords": ["WordPress", "web development"]
+      },
+      {
+        "url": "post29.html",
+        "title": "DevOps Essentials",
+        "description": "This post covers DevOps essentials.",
+        "keywords": ["DevOps", "web development", "CI/CD"]
+      },
+      {
+        "url": "post30.html",
+        "title": "JavaScript Frameworks for Building Mobile Apps",
+        "description": "This post covers JavaScript frameworks for building mobile apps.",
+        "keywords": ["JavaScript", "mobile development", "frameworks"]
+      }
+    ]
+  }

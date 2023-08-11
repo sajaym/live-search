@@ -1,0 +1,137 @@
+"<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #search {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #clear {
+            display: none;
+        }
+
+        #results {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="search" placeholder="Search...">
+        <button id="clear" title="Clear Query">X</button>
+    </div>
+    <ul id="results"></ul>
+
+    <script>
+        // fetch posts from JSON file
+        fetch('data2.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var posts = data.posts;
+
+                // get references to the search box, clear button, and results list
+                var searchBox = document.getElementById('search');
+                var clearButton = document.getElementById('clear');
+                var resultsList = document.getElementById('results');
+
+                // listen for keyup events on the search box
+                searchBox.addEventListener('keyup', function (event) {
+                    // clear the results list
+                    resultsList.innerHTML = '';
+
+                    // get the query the user typed
+                    var query = searchBox.value.trim().toLowerCase();
+
+                    // clear the clear button if there is no query
+                    if (query.length === 0) {
+                        clearButton.style.display = 'none';
+                        return;
+                    }
+
+                    // show the clear button
+                    clearButton.style.display = 'inline-block';
+
+                    // split the query into individual characters
+                    var characters = query.split('');
+
+                    // filter the posts by the query
+                    var filteredPosts = posts.filter(function (post) {
+                        // search for each character in the post's title and keywords
+                        for (var i = 0; i < characters.length; i++) {
+                            var character = characters[i];
+                            if (!(post.title.toLowerCase().includes(character) || 
+                                post.keywords.join().toLowerCase().includes(character))) {
+                                return false; // exclude the post when a character is not found
+                            }
+                        }
+                        return true; // include the post when all characters are found
+                    });
+
+                    // add the filtered posts to the results list
+                    filteredPosts.forEach(function (post) {
+                        var postItem = document.createElement('li');
+                        var postLink = document.createElement('a');
+                        postLink.textContent = post.title;
+                        postLink.href = post.url;
+                        postItem.appendChild(postLink);
+
+                        var postDescription = document.createElement('p');
+                        postDescription.textContent = post.description;
+                        postItem.appendChild(postDescription);
+
+                        resultsList.appendChild(postItem);
+                    });
+                });
+
+                // listen for click events on the clear button
+                clearButton.addEventListener('click', function () {
+                    // clear the search box and results list, hide the clear button
+                    searchBox.value = '';
+                    resultsList.innerHTML = '';
+                    clearButton.style.display = 'none';
+                });
+            });
+    </script>
+</body>
+</html>"
+
+
+
+modefy the above code that it can show results according to priority, if word or phrase user type is present in post title part in json that it comes above whatever is its present under in json but show it in above result list. for example
+
+"    
+    {
+      "url": "post17.html",
+      "title": "IBPS RRB Recruitment 2023",
+      "description": "The Institute of Banking Personnel Selection announces recruitment for Regional Rural Banks",
+      "keywords": ["ibps", "rrb", "recruitment", "2023"]
+    },
+    {
+      "url": "post18.html",
+      "title": "SSC Stenographer 2023 Notification",
+      "description": "Staff Selection Commission releases notification for Stenographer exam",
+      "keywords": ["ssc", "stenographer", "notification", "2023"]
+    },
+    {
+      "url": "post16.html",
+      "title": "UPSC NDA 2023 Notification",
+      "description": "Union Public Service Commission releases notification for National Defence Academy exam",
+      "keywords": ["ssc", "cgl", "notification", "2023"]
+    }
+    "
+
+for example in that json file if user type "ssc cgl notification 2023" than show post16 result above and post18 result under that, because user use 3 keywords of that section so put this on above priority

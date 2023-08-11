@@ -1,0 +1,131 @@
+{
+  "posts": [
+    
+    {
+      "url": "post1.html",
+      "title": "cgl admit card download",
+      "description": "staff selection commission",
+      "keywords": ["ssc", "cgl", "result", "2023", "admit card"]
+    },
+    {
+      "url": "post2.html",
+      "title": "ssc exam result 2023",
+      "description": "staff selection commission announces result of ssc exam",
+      "keywords": ["ssc", "result", "2023"]
+    },
+    {
+      "url": "post3.html",
+      "title": "upsc civil services exam 2023",
+      "description": "upsconline conducts civil services exam every year",
+      "keywords": ["upsc", "civil services", "exam", "2023"]
+    },
+    {
+      "url": "post4.html",
+      "title": "admit card for railway recruitment exam 2023",
+      "description": "railway recruitment board releases admit card for exams",
+      "keywords": ["railway", "recruitment", "exam", "admit card", "2023"]
+    },
+    {
+      "url": "post5.html",
+      "title": "IBPS PO Recruitment 2023",
+      "description": "The Institute of Banking Personnel Selection announces recruitment of Probationary Officers",
+      "keywords": ["ibps", "po", "recruitment", "2023"]
+    },
+    {
+      "url": "post6.html",
+      "title": "SSC CHSL 2023 Notification",
+      "description": "Staff Selection Commission releases notification for Combined Higher Secondary Level exam",
+      "keywords": ["ssc", "chsl", "notification", "2023"]
+    },
+    {
+      "url": "post7.html",
+      "title": "RRB NTPC Results 2023",
+      "description": "Railway Recruitment Board announces results of Non-Technical Popular Category exam",
+      "keywords": ["rrb", "ntpc", "results", "2023"]
+    },
+    {
+      "url": "post8.html",
+      "title": "UPSC CAPF 2023 Notification",
+      "description": "Union Public Service Commission releases notification for Central Armed Police Forces exam",
+      "keywords": ["upsc", "capf", "notification", "2023"]
+    },
+    {
+      "url": "post9.html",
+      "title": "SBI PO Recruitment 2023",
+      "description": "State Bank of India announces recruitment of Probationary Officers",
+      "keywords": ["sbi", "po", "recruitment", "2023"]
+    },
+    {
+      "url": "post10.html",
+      "title": "SSC CGL 2023 Notification",
+      "description": "Staff Selection Commission releases notification for Combined Graduate Level exam",
+      "keywords": ["ssc", "cgl", "notification", "2023"]
+    },
+    {
+      "url": "post11.html",
+      "title": "RRB TC Recruitment 2023",
+      "description": "Railway Recruitment Board announces recruitment of Ticket Collectors",
+      "keywords": ["rrb", "tc", "recruitment", "2023"]
+    },
+    {
+      "url": "post12.html",
+      "title": "UPSC IES Notification 2023",
+      "description": "Union Public Service Commission releases notification for Indian Engineering Services exam",
+      "keywords": ["upsc", "ies", "notification", "2023"]
+    },
+    {
+      "url": "post13.html",
+      "title": "IBPS Clerk Results 2023",
+      "description": "The Institute of Banking Personnel Selection announces results of Clerk exam",
+      "keywords": ["ibps", "clerk", "results", "2023"]
+    },
+    {
+      "url": "post14.html",
+      "title": "SSC JE 2023 Notification",
+      "description": "Staff Selection Commission releases notification for Junior Engineer exam",
+      "keywords": ["ssc", "je", "notification", "2023"]
+    },
+    {
+      "url": "post15.html",
+      "title": "RRB Group D Recruitment 2023",
+      "description": "Railway Recruitment Board announces recruitment of Group D staff",
+      "keywords": ["rrb", "group d", "recruitment", "2023"]
+    },
+    {
+      "url": "post16.html",
+      "title": "UPSC NDA 2023 Notification",
+      "description": "Union Public Service Commission releases notification for National Defence Academy exam",
+      "keywords": ["upsc", "nda", "notification", "2023"]
+    },
+    {
+      "url": "post17.html",
+      "title": "IBPS RRB Recruitment 2023",
+      "description": "The Institute of Banking Personnel Selection announces recruitment for Regional Rural Banks",
+      "keywords": ["ibps", "rrb", "recruitment", "2023"]
+    },
+    {
+      "url": "post18.html",
+      "title": "SSC Stenographer 2023 Notification",
+      "description": "Staff Selection Commission releases notification for Stenographer exam",
+      "keywords": ["ssc", "stenographer", "notification", "2023"]
+    },
+    {
+      "url": "post19.html",
+      "title": "RRB JE Results 2023",
+      "description": "Railway Recruitment Board announces results of Junior Engineer exam",
+      "keywords": ["rrb", "je", "results", "2023"]
+    },
+    {
+      "url": "post21.html",
+      "title": "KVS PGT TGT PRT Result",
+      "description": "Railway Recruitment Board announces results of Junior Engineer exam",
+      "keywords": ["KVS", "PGT", "TGT", "2023"]
+    },
+    {
+      "url": "post20.html",
+      "title": "UPSC CDS 2023 Notification",
+      "description": "Union Public Service Commission releases notification for Combined Defence Services exam",
+      "keywords": ["upsc", "cds", "notification", "2023"]
+    }
+  ]
+}
